@@ -19,7 +19,9 @@ class ListExampleScreen extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(title: const Text('Listă Produse')),
-      // ListView.builder - eficient pentru liste lungi (Vezi 7.4.3)
+      // ListView.builder este optimizat pentru liste lungi sau infinite.
+      // Construiește elementele doar când devin vizibile (lazy loading).
+      // Echivalentul direct este LazyColumn din Jetpack Compose.
       body: ListView.builder(
         itemCount: produse.length,
         itemBuilder: (context, index) {
@@ -27,6 +29,7 @@ class ListExampleScreen extends StatelessWidget {
           
           return Card(
             margin: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+            // ListTile este un widget standard pentru elemente de listă (titlu, subtitlu, iconiță).
             child: ListTile(
               leading: CircleAvatar(child: Text('${produs.id}')),
               title: Text(produs.nume),
@@ -34,7 +37,8 @@ class ListExampleScreen extends StatelessWidget {
               trailing: const Icon(Icons.arrow_forward_ios),
               // Navigare la click pe element
               onTap: () {
-                // Transmiterea argumentelor (Vezi 7.5.3)
+                // Transmiterea argumentelor către o rută numită.
+                // Similar cu a pune argumente într-un Bundle sau în URL-ul rutei în Navigation Compose.
                 Navigator.pushNamed(
                   context,
                   '/details',

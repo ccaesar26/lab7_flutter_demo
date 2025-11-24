@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:lab7_flutter_demo/my_app.dart';
 
-// ======================================================================
-// 2. CONFIGURAREA APLICAȚIEI & RUTE (Vezi 7.5.2)
-// ======================================================================
-
+// Entry point-ul aplicației.
+// Similar cu funcția main() din Kotlin.
 void main() {
+  // runApp pornește aplicația Flutter și atașează widget-ul rădăcină (MyApp) la ecran.
   runApp(const MyApp());
 }

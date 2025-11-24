@@ -8,16 +8,18 @@ class LayoutExampleScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(title: const Text('Layout-uri de Bază')),
       body: Padding(
-        padding: const EdgeInsets.all(16.0),
+        padding: const EdgeInsets.all(16.0), // Modifier.padding(16.dp)
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const Text('Exemplu Row (Orizontal):'),
             const SizedBox(height: 10),
-            // Row
+            // Row este echivalentul Row din Jetpack Compose.
             Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              mainAxisAlignment: MainAxisAlignment.spaceAround, // Arrangement.SpaceAround
               children: [
+                // Container este un widget versatil pentru styling (dimensiuni, culori, margini).
+                // Similar cu Box sau Surface cu modifiers în Compose.
                 Container(color: Colors.red, width: 50, height: 50),
                 Container(color: Colors.green, width: 50, height: 50),
                 Container(color: Colors.blue, width: 50, height: 50),
@@ -26,10 +28,11 @@ class LayoutExampleScreen extends StatelessWidget {
             const Divider(height: 30),
             const Text('Exemplu Stack (Suprapunere):'),
             const SizedBox(height: 10),
-            // Stack
+            // Stack permite suprapunerea widget-urilor (ca un Z-index).
+            // Este echivalentul lui Box din Jetpack Compose.
             Center(
               child: Stack(
-                alignment: Alignment.center,
+                alignment: Alignment.center, // ContentAlignment = Alignment.Center
                 children: [
                   Container(
                     width: 150,

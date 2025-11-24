@@ -7,14 +7,21 @@ class InteractiveScreen extends StatefulWidget {
   State<InteractiveScreen> createState() => _InteractiveScreenState();
 }
 
+// StatefulWidget menține o stare care se poate schimba în timp.
+// Echivalentul în Compose ar fi un Composable care folosește remember { mutableStateOf(...) }.
 class _InteractiveScreenState extends State<InteractiveScreen> {
   // Controller pentru TextField (Vezi 7.4.2)
+  // Gestionează textul introdus, similar cu un state holder pentru un TextField în Compose.
   final TextEditingController _nameController = TextEditingController();
+  
+  // Variabile de stare
   String _greetingMessage = "Introdu numele tău mai jos";
   bool _isSwitchOn = false;
 
   void _updateGreeting() {
-    // setState declanșează recompoziția (rebuild) - Vezi 7.4.1
+    // setState declanșează recompoziția (rebuild) widget-ului.
+    // Este mecanismul prin care anunțăm Flutter că starea s-a schimbat.
+    // Similar cu actualizarea valorii unui MutableState în Compose (ex: state.value = newValue).
     setState(() {
       if (_nameController.text.isNotEmpty) {
         _greetingMessage = "Salut, ${_nameController.text}!";
@@ -37,6 +44,7 @@ class _InteractiveScreenState extends State<InteractiveScreen> {
             ),
             const SizedBox(height: 20),
             // Input Text
+            // TextField este echivalentul TextField din Material Design.
             TextField(
               controller: _nameController,
               decoration: const InputDecoration(

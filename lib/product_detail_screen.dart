@@ -6,7 +6,9 @@ class ProductDetailScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // Extragerea argumentelor din setările rutei
+    // Extragerea argumentelor din setările rutei.
+    // ModalRoute.of(context) accesează ruta curentă.
+    // Similar cu extragerea argumentelor din SavedStateHandle în ViewModel sau din backStackEntry în Compose.
     final args = ModalRoute.of(context)!.settings.arguments as ProductDetailsArguments;
 
     return Scaffold(
@@ -37,7 +39,8 @@ class ProductDetailScreen extends StatelessWidget {
               const SizedBox(height: 30),
               ElevatedButton(
                 onPressed: () {
-                  // Întoarcere la ecranul anterior (Vezi 7.5.1 final)
+                  // Întoarcere la ecranul anterior.
+                  // Similar cu navController.popBackStack() în Compose.
                   Navigator.pop(context);
                 },
                 child: const Text('Înapoi la Listă'),

@@ -1,3 +1,5 @@
+// Clasă simplă de date (Data Class).
+// Similar cu data class Produs(...) din Kotlin.
 class Produs {
   final int id;
   final String nume;
