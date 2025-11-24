@@ -3,7 +3,6 @@ import 'package:lab7_flutter_demo/home_screen.dart';
 import 'package:lab7_flutter_demo/interactive_screen.dart';
 import 'package:lab7_flutter_demo/layout_example_screen.dart';
 import 'package:lab7_flutter_demo/list_example_screen.dart';
-import 'package:lab7_flutter_demo/main.dart';
 import 'package:lab7_flutter_demo/product_detail_screen.dart';
 
 class MyApp extends StatelessWidget {

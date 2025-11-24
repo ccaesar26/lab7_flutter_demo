@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:lab7_flutter_demo/main.dart';
 
 class InteractiveScreen extends StatefulWidget {
   const InteractiveScreen({super.key});
